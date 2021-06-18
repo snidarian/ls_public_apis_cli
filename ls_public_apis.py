@@ -2,22 +2,21 @@
 
 
 import requests as rq
-import argparse
-
+import json as j
 
 
 
 result = rq.get('https://api.publicapis.org/entries')
 
 
-result = result.json()
+data_object = result.json()
 
 
-print(result)
+json_string = j.dumps(data_object, indent=2, ensure_ascii=False)
 
 
 
-
+print(json_string)
 
 
 
